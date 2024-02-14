@@ -31,8 +31,18 @@ def calculadoraAritmetica(opcion):
 
     else:
         print("opcion no definida")
+    
+opcion=-1
 
-print ("1 - Suma de dos numeros")
-print ("2 - Resta de dos numeros")
-opcion = int(input('ingrese una opcion: '))
-calculadoraAritmetica(opcion)
+while(opcion!=0):
+    print ("*************************")
+    print ("1 - Suma de dos numeros")
+    print ("2 - Resta de dos numeros")
+    print ("*************************")
+    print ("0 - Opcion de Salida")
+    print ("*************************")
+    opcion = int(input('ingrese una opcion: '))
+    if (opcion==0):
+        print("Adios! Que tenga un buen dia")
+    else:
+        calculadoraAritmetica(opcion)
