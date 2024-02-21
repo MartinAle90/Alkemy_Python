@@ -36,7 +36,7 @@ class Libro(Producto):
 
     def mostrarProducto(self):
         print(f'------------------------------')
-        print(f'Titulo: {self.titulo}')
+        print(f'Titulo {self.__class__.__qualname__}: {self.titulo}')
         print(f'Precio: $ {self.precio}')
         print(f'Autor: {self.autor}')
         print(f'Editorial: {self.editorial}')
@@ -51,7 +51,7 @@ class Pelicula(Producto):
         
     def mostrarProducto(self):
         print(f'------------------------------')
-        print(f'Titulo: {self.titulo}')
+        print(f'Titulo {self.__class__.__qualname__}: {self.titulo}')
         print(f'Precio: $ {self.precio}')
         print(f'Actor Principal: {self.actorPrincipal}')
         print(f'Productora: {self.productora}')
@@ -65,7 +65,7 @@ class Disco(Producto):
         
     def mostrarProducto(self):
         print(f'------------------------------')
-        print(f'Titulo: {self.titulo}')
+        print(f'Titulo {self.__class__.__qualname__}: {self.titulo}')
         print(f'Precio: $ {self.precio}')
         print(f'Artista/Banda: {self.artistaBanda}')
         print(f'Discografia: {self.discografica}')
