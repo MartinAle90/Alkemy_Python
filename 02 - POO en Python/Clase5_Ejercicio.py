@@ -69,19 +69,3 @@ pelicula3 = Pelicula("Titulo 03", "4500", "Juan Perez", "Luciernaga")
 disco1 = Disco("Titulo 01", "250", "Juan Perez", "Luciernaga")
 disco2 = Disco("Titulo 02", "350", "Juan Perez", "Luciernaga")
 disco3 = Disco("Titulo 03", "650", "Juan Perez", "Luciernaga")
-
-def mostrar_atributos(clase):
-  """
-  Muestra todos los atributos de una clase y sus hijos.
-  """
-  # Obtiene los miembros de la clase
-  miembros = getmembers(clase)
-
-  # Imprime los nombres de los miembros
-  for nombre, valor in miembros:
-    print(f"- {nombre}")
-
-  # Revisa si la clase tiene hijos
-  for hijo in clase.__subclasses__():
-    # Llama a la función recursivamente para los hijos
-    mostrar_atributos(hijo)
