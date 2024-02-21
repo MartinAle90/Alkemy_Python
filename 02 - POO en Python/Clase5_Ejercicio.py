@@ -37,35 +37,60 @@ class Libro(Producto):
         self.editorial = editorial
 
     def mostrarProducto(self):
+        print(f'------------------------------')
         print(f'Titulo: {self.titulo}')
+        print(f'Precio: $ {self.precio}')
         print(f'Autor: {self.autor}')
-        print(f'Precio: {self.precio}')
-        print(f'Tipo_tapa: {self.editorial}')
+        print(f'Editorial: {self.editorial}')
+        print(f'------------------------------')
+
         
 class Pelicula(Producto):
     def __init__(self, titulo, precio,  actorPrincipal, productora):
         super().__init__(titulo, precio)
         self.actorPrincipal = actorPrincipal
         self.productora = productora
+        
+    def mostrarProducto(self):
+        print(f'------------------------------')
+        print(f'Titulo: {self.titulo}')
+        print(f'Precio: $ {self.precio}')
+        print(f'Actor Principal: {self.actorPrincipal}')
+        print(f'Productora: {self.productora}')
+        print(f'------------------------------')
 
 class Disco(Producto):
     def __init__(self, titulo, precio,  artistaBanda, discografica):
         super().__init__(titulo, precio)
         self.artistaBanda = artistaBanda
-        self.editodiscograficarial = discografica
+        self.discografica = discografica
+        
+    def mostrarProducto(self):
+        print(f'------------------------------')
+        print(f'Titulo: {self.titulo}')
+        print(f'Precio: $ {self.precio}')
+        print(f'Artista/Banda: {self.artistaBanda}')
+        print(f'Discografia: {self.discografica}')
+        print(f'------------------------------')
         
         
 libro1 = Libro("Titulo 01", "100", "Juan Perez", "Luciernaga")
 libro1.mostrarProducto()
 libro2 = Libro("Titulo 02", "200", "Pablo Gonzalez", "Rayada")
+libro2.mostrarProducto()
 libro3 = Libro("Titulo 03", "500", "Ramiro Angel", "Periplo")
+libro3.mostrarProducto()
 
+pelicula1 = Pelicula("Titulo 01", "1500", "Star Wars", "Lucas Films")
+pelicula1.mostrarProducto()
+pelicula2 = Pelicula("Titulo 02", "3000", "Spiderman", "Sony")
+pelicula2.mostrarProducto()
+pelicula3 = Pelicula("Titulo 03", "4500", "Jhon Wick", "Universal")
+pelicula3.mostrarProducto()
 
-
-pelicula1 = Pelicula("Titulo 01", "1500", "Juan Perez", "Luciernaga")
-pelicula2 = Pelicula("Titulo 02", "3000", "Juan Perez", "Luciernaga")
-pelicula3 = Pelicula("Titulo 03", "4500", "Juan Perez", "Luciernaga")
-
-disco1 = Disco("Titulo 01", "250", "Juan Perez", "Luciernaga")
-disco2 = Disco("Titulo 02", "350", "Juan Perez", "Luciernaga")
-disco3 = Disco("Titulo 03", "650", "Juan Perez", "Luciernaga")
+disco1 = Disco("Titulo 01", "250", "Calamaro", "Panchitos")
+disco1.mostrarProducto()
+disco2 = Disco("Titulo 02", "350", "Dividios", "Nostradamus")
+disco2.mostrarProducto()
+disco3 = Disco("Titulo 03", "650", "Attaque 77", "Rock and Pop")
+disco3.mostrarProducto()
