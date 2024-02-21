@@ -25,11 +25,9 @@ class Producto:
         self.precio = precio
         
     def mostrarProducto(self):
-        print(f'Titulo: {self.titulo}')
-        print(f'Precio: $ {self.precio}')
+        pass
      
         
-
 class Libro(Producto):
     def __init__(self, titulo, precio,  autor, editorial):
         super().__init__(titulo, precio)
