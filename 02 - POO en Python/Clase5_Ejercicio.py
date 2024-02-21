@@ -25,8 +25,8 @@ class Producto:
         self.precio = precio
         
     def mostrarProducto(self):
-        print(f'{self.titulo}')
-        print(f'$ {self.precio}')
+        print(f'Titulo: {self.titulo}')
+        print(f'Precio: $ {self.precio}')
      
         
 
@@ -36,6 +36,11 @@ class Libro(Producto):
         self.autor = autor
         self.editorial = editorial
 
+    def mostrarProducto(self):
+        print(f'Titulo: {self.titulo}')
+        print(f'Autor: {self.autor}')
+        print(f'Precio: {self.precio}')
+        print(f'Tipo_tapa: {self.editorial}')
         
 class Pelicula(Producto):
     def __init__(self, titulo, precio,  actorPrincipal, productora):
