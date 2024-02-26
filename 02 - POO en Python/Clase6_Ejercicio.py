@@ -80,14 +80,18 @@ class EmpleadoComision(Empleado):
         
     def calcular_salario(self):
         #Calcula el salario del empleado a comisión.
-        print(123)
+        if (self.salario_minimo >= (self.clientes_captados*self.monto_por_cliente)):
+            salarioFinal = self.salario_minimo
+        else:
+            salarioFinal = (self.clientes_captados*self.monto_por_cliente)
+        
+        return salarioFinal
 
     def mostrar_salario(self):
         #Muestra por consola el salario del empleado a comisión.
-        pass
+        print(self.calcular_salario())
 
 empleadoFijo01 = EmpleadoFijo ("123456789", "Juan", "Perez", 2000, 1000)
-empleadoFijo01.calcular_salario()
 empleadoFijo01.mostrar_salario()
 
 empleadoComision01 = EmpleadoComision ("123456789", "Juan", "Perez", 2000, 500, 20, 10)
