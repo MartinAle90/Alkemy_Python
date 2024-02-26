@@ -26,7 +26,7 @@ class Producto:
         
     def mostrarProducto(self):
         pass
-     
+    
         
 class Libro(Producto):
     def __init__(self, titulo, precio,  autor, editorial):
