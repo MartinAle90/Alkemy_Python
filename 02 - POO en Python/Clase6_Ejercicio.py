@@ -94,5 +94,5 @@ class EmpleadoComision(Empleado):
 empleadoFijo01 = EmpleadoFijo ("123456789", "Juan", "Perez", 2000, 1000)
 empleadoFijo01.mostrar_salario()
 
-empleadoComision01 = EmpleadoComision ("123456789", "Juan", "Perez", 2000, 500, 20, 10)
-empleadoComision01.calcular_salario()
+empleadoComision01 = EmpleadoComision ("123456789", "Juan", "Perez", 2000, 500, 30, 25)
+empleadoComision01.mostrar_salario()
