@@ -47,14 +47,10 @@ class Empleado:
     def mostrar_salario(self):
         #Muestra por consola el salario del empleado.
         pass
-
-class EmpleadoFijo:
+    
+class EmpleadoFijo(Empleado):
     def __init__(self, dni, nombre, apellido, año_ingreso, sueldo_basico):
-        #Constructor de la clase EmpleadoFijo.
-        self.dni = dni
-        self.nombre = nombre
-        self.apellido = apellido
-        self.año_ingreso = año_ingreso
+        super().__init__(dni, nombre, apellido, año_ingreso)
         self.sueldo_basico = sueldo_basico
 
     def calcular_salario(self):
@@ -76,26 +72,24 @@ class EmpleadoFijo:
         #Muestra por consola el salario del empleado fijo.
         salarioFinal = self.calcular_salario
         print(salarioFinal)
-        pass
-
-class EmpleadoComision:
-
+    
+class EmpleadoComision(Empleado):
     def __init__(self, dni, nombre, apellido, año_ingreso, salario_minimo, clientes_captados, monto_por_cliente):
-        #Constructor de la clase EmpleadoComision.
-        self.dni = dni
-        self.nombre = nombre
-        self.apellido = apellido
-        self.año_ingreso = año_ingreso
+        super().__init__(dni, nombre, apellido, año_ingreso)
         self.salario_minimo = salario_minimo
         self.clientes_captados = clientes_captados
         self.monto_por_cliente = monto_por_cliente
         
     def calcular_salario(self):
         #Calcula el salario del empleado a comisión.
-        pass
+        print(123)
+
     def mostrar_salario(self):
         #Muestra por consola el salario del empleado a comisión.
         pass
 
 empleadoFijo01 = EmpleadoFijo ("123456789", "Juan", "Perez", 2000, 1000)
 empleadoFijo01.calcular_salario()
+
+empleadoComision01 = EmpleadoComision ("123456789", "Juan", "Perez", 2000, 500, 20, 10)
+empleadoComision01.calcular_salario()
