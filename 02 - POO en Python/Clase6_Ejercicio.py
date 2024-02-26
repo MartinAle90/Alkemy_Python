@@ -65,13 +65,11 @@ class EmpleadoFijo(Empleado):
         elif((año_actual-self.año_ingreso) > 5):
             salarioFinal = self.sueldo_basico + (self.sueldo_basico)*0.1
             
-        print(salarioFinal)
         return salarioFinal
         
     def mostrar_salario(self):
         #Muestra por consola el salario del empleado fijo.
-        salarioFinal = self.calcular_salario
-        print(salarioFinal)
+        print(self.calcular_salario())
     
 class EmpleadoComision(Empleado):
     def __init__(self, dni, nombre, apellido, año_ingreso, salario_minimo, clientes_captados, monto_por_cliente):
@@ -90,6 +88,7 @@ class EmpleadoComision(Empleado):
 
 empleadoFijo01 = EmpleadoFijo ("123456789", "Juan", "Perez", 2000, 1000)
 empleadoFijo01.calcular_salario()
+empleadoFijo01.mostrar_salario()
 
 empleadoComision01 = EmpleadoComision ("123456789", "Juan", "Perez", 2000, 500, 20, 10)
 empleadoComision01.calcular_salario()
