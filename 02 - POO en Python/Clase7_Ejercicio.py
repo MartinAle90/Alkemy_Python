@@ -23,6 +23,7 @@ atributos, metodos y relaciones (los constructores pueden omitirse).
 """
 
 from enum import Enum
+import random
 
 
 class TipoInstrumento(Enum):
@@ -39,14 +40,14 @@ class Fabrica:
 
     def listarInstrumentos(self):
         for sucursal in self.listaSucursales:
-            for instrumentos in sucursal.mostrarInstrumento():
-                print(instrumentos.id, instrumentos.precio, instrumentos.tipoInstrumento)
+            for instrumento in sucursal.mostrarInstrumento():
+                print(f"id_instrumento: {instrumento.id}, precio: $ {instrumento.precio}, Tipo_Instrumento: {instrumento.tipoInstrumento.value}")
 
     def instrumentosPorTipo(self, tipo):
         for sucursal in self.listaSucursales:
             for instrumentos in sucursal.mostrarInstrumento():
                 if(instrumentos.tipo == tipo):
-                    print(instrumentos.id, instrumentos.precio, instrumentos.tipoInstrumento)
+                    print(f"{instrumentos.id}, {instrumentos.precio}, Tipo_Instrumento: {instrumentos}")
 
 class Sucursal:
     def __init__(self, nombre):
@@ -74,17 +75,27 @@ class Instrumento:
 fabrica = Fabrica()
 
 suc01 = Sucursal("Sucursal 1")
-suc02 = Sucursal("Sucursal 2")
+
+# Enum Random, pruebas
+print ((random.randint(0, len(TipoInstrumento)-1)))
+print (TipoInstrumento.Percusión._order_)
 
 
-instr01 = Instrumento("1","1700", TipoInstrumento.Cuerda)
-instr02 = Instrumento("2","2700", TipoInstrumento.Percusión)
+instr01 = Instrumento("1",random.randint(1000, 2500), TipoInstrumento.Cuerda)
+instr02 = Instrumento("1",random.randint(1000, 2500), TipoInstrumento.Percusión)
+instr03 = Instrumento("1",random.randint(1000, 2500), TipoInstrumento.Cuerda)
+instr04 = Instrumento("1",random.randint(1000, 2500), TipoInstrumento.Percusión)
+instr05 = Instrumento("1",random.randint(1000, 2500), TipoInstrumento.Cuerda)
+instr06 = Instrumento("1",random.randint(1000, 2500), TipoInstrumento.Percusión)
 
 fabrica.agregarSucursal(suc01)
-fabrica.agregarSucursal(suc02)
 
 suc01.agregarInstrumento(instr01)
 suc01.agregarInstrumento(instr02)
+suc01.agregarInstrumento(instr03)
+suc01.agregarInstrumento(instr04)
+suc01.agregarInstrumento(instr05)
+
 
 fabrica.listarInstrumentos()
 
