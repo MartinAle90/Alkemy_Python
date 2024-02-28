@@ -30,7 +30,7 @@ class TipoInstrumento(Enum):
     Percusión = "Percusión"
     Viento = "Viento"
     Cuerda = "Cuerda"
-    
+
 class Fabrica:
     def __init__(self):
         self.listaSucursales = []
@@ -41,13 +41,13 @@ class Fabrica:
     def listarInstrumentos(self):
         for sucursal in self.listaSucursales:
             for instrumento in sucursal.mostrarInstrumento():
-                print(f"id_instrumento: {instrumento.id}, precio: $ {instrumento.precio}, Tipo_Instrumento: {instrumento.tipoInstrumento.value}")
+                print(f"id_Instrumento: {instrumento.id}, Precio: $ {instrumento.precio}, Tipo_Instrumento: {instrumento.tipoInstrumento.value}")
 
     def instrumentosPorTipo(self, tipo):
         for sucursal in self.listaSucursales:
-            for instrumentos in sucursal.mostrarInstrumento():
-                if(instrumentos.tipo == tipo):
-                    print(f"{instrumentos.id}, {instrumentos.precio}, Tipo_Instrumento: {instrumentos}")
+            for instrumento in sucursal.mostrarInstrumento():
+                if(instrumento.tipoInstrumento.value.lower() == tipo.lower()):
+                    print(f"id_Instrumento: {instrumento.id}, Precio: $ {instrumento.precio}, Tipo_Instrumento: {instrumento.tipoInstrumento.value}")
 
 class Sucursal:
     def __init__(self, nombre):
@@ -64,12 +64,14 @@ class Sucursal:
     def mostrarInstrumento(self):
         return self.listaIntrumentos
 
-
 class Instrumento:
-    def __init__(self, id, precio, tipoInstrumento):
+    def __init__(self, precio, tipoInstrumento):
+        global id
+        id += 1
         self.id = id
         self.precio = precio
         self.tipoInstrumento = tipoInstrumento
+id = 0
 
 
 fabrica = Fabrica()
@@ -77,16 +79,16 @@ fabrica = Fabrica()
 suc01 = Sucursal("Sucursal 1")
 
 # Enum Random, pruebas
-print ((random.randint(0, len(TipoInstrumento)-1)))
-print (TipoInstrumento.Percusión._order_)
+#print ((random.randint(0, len(TipoInstrumento)-1)))
+print (TipoInstrumento.Percusión)
 
 
-instr01 = Instrumento("1",random.randint(1000, 2500), TipoInstrumento.Cuerda)
-instr02 = Instrumento("1",random.randint(1000, 2500), TipoInstrumento.Percusión)
-instr03 = Instrumento("1",random.randint(1000, 2500), TipoInstrumento.Cuerda)
-instr04 = Instrumento("1",random.randint(1000, 2500), TipoInstrumento.Percusión)
-instr05 = Instrumento("1",random.randint(1000, 2500), TipoInstrumento.Cuerda)
-instr06 = Instrumento("1",random.randint(1000, 2500), TipoInstrumento.Percusión)
+instr01 = Instrumento(random.randint(1000, 2500), TipoInstrumento.Percusión)
+instr02 = Instrumento(random.randint(1000, 2500), TipoInstrumento.Viento)
+instr03 = Instrumento(random.randint(1000, 2500), TipoInstrumento.Cuerda)
+instr04 = Instrumento(random.randint(1000, 2500), TipoInstrumento.Percusión)
+instr05 = Instrumento(random.randint(1000, 2500), TipoInstrumento.Viento)
+instr06 = Instrumento(random.randint(1000, 2500), TipoInstrumento.Cuerda)
 
 fabrica.agregarSucursal(suc01)
 
@@ -96,7 +98,10 @@ suc01.agregarInstrumento(instr03)
 suc01.agregarInstrumento(instr04)
 suc01.agregarInstrumento(instr05)
 
-
+print("--------------------------------------------------------------------------------")
 fabrica.listarInstrumentos()
-
-
+print("--------------------------------------------------------------------------------")
+print("--------------------------------------------------------------------------------")
+inputTipoInstr = input("Tipo de instrumento a buscar: ")
+fabrica.instrumentosPorTipo(inputTipoInstr)
+print("--------------------------------------------------------------------------------")
