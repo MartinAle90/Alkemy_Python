@@ -21,6 +21,9 @@ class Animal:
         
     def comer():
         return "estoy comiendo"
+    
+    def mostrar(self):
+        print(f"{self.tipo} de {self.cantidad_patas} patas")
 
 class Perro:
     def __init__(self, nombre, raza):
@@ -39,8 +42,9 @@ class Aguila(Animal):
         return "estoy volando"
     
 animal0 = Animal(4, "Felino")
+animal0.mostrar()
 
 miPerro = Perro("Jamoncito", "Beagle")
-miPerro.correr
 
-aguila0 = Aguila(2, "Volador")
+aguila0 = Aguila(2, "Volador", 10)
+aguila0.mostrar()

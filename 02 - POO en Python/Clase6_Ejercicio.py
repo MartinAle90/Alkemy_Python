@@ -36,6 +36,9 @@ creen 10 empleados
 
 """
 
+import random
+
+
 class Empleado:
     def __init__(self, dni, nombre, apellido, año_ingreso):
         #Constructor de la clase Empleado.
@@ -69,7 +72,7 @@ class EmpleadoFijo(Empleado):
         
     def mostrar_salario(self):
         #Muestra por consola el salario del empleado fijo.
-        print(self.calcular_salario())
+        print(f"(E s/C) Salario de {self.apellido}, {self.nombre} es de $ {self.calcular_salario()}")
     
 class EmpleadoComision(Empleado):
     def __init__(self, dni, nombre, apellido, año_ingreso, salario_minimo, clientes_captados, monto_por_cliente):
@@ -89,10 +92,27 @@ class EmpleadoComision(Empleado):
 
     def mostrar_salario(self):
         #Muestra por consola el salario del empleado a comisión.
-        print(self.calcular_salario())
+        print(f"(E c/C) Salario de {self.apellido}, {self.nombre} es de $ {self.calcular_salario()}")
 
-empleadoFijo01 = EmpleadoFijo ("123456789", "Juan", "Perez", 2000, 1000)
+empleadoFijo01 = EmpleadoFijo ("123456789", "Juan", "Perez", random.randint(2000, 2024), random.randint(500, 2500))
+empleadoFijo02 = EmpleadoFijo ("123456789", "Lucas", "Garcia", random.randint(2000, 2024), random.randint(500, 2500))
+empleadoFijo03 = EmpleadoFijo ("123456789", "Carina", "Gonzalez", random.randint(2000, 2024), random.randint(500, 2500))
+empleadoFijo04 = EmpleadoFijo ("123456789", "Ramona", "Patakis", random.randint(2000, 2024), random.randint(500, 2500))
+empleadoFijo05 = EmpleadoFijo ("123456789", "Carla", "Mamani", random.randint(2000, 2024), random.randint(500, 2500))
 empleadoFijo01.mostrar_salario()
+empleadoFijo02.mostrar_salario()
+empleadoFijo03.mostrar_salario()
+empleadoFijo04.mostrar_salario()
+empleadoFijo05.mostrar_salario()
 
-empleadoComision01 = EmpleadoComision ("123456789", "Juan", "Perez", 2000, 500, 30, 25)
+empleadoComision01 = EmpleadoComision ("123456789", "Juan", "Perez", random.randint(2000, 2024), 500, random.randint(10, 50), random.randint(10, 30))
+empleadoComision02 = EmpleadoComision ("123456789", "Lucas", "Garcia", random.randint(2000, 2024), 500, random.randint(10, 50), 25)
+empleadoComision03 = EmpleadoComision ("123456789", "Carina", "Gonzalez", random.randint(2000, 2024), 500, random.randint(10, 50), 25)
+empleadoComision04 = EmpleadoComision ("123456789", "Ramona", "Patakis", random.randint(2000, 2024), 500, random.randint(10, 50), 25)
+empleadoComision05 = EmpleadoComision ("123456789", "Carla", "Mamani", random.randint(2000, 2024), 500, random.randint(10, 50), 25)
 empleadoComision01.mostrar_salario()
+empleadoComision02.mostrar_salario()
+empleadoComision03.mostrar_salario()
+empleadoComision04.mostrar_salario()
+empleadoComision05.mostrar_salario()
+
